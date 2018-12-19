@@ -1,0 +1,41 @@
+let グーチョキパー = 0
+input.onGesture(Gesture.Shake, () => {
+ グーチョキパー = Math.random(3)
+music.beginMelody(music.builtInMelody(Melodies.BaDing), MelodyOptions.Once)
+if (グーチョキパー == 0) {
+basic.showLeds(`
+ . . . . .
+ . # . # .
+ # . # . #
+ # . . . #
+ . # . # .
+ `)
+ } else {
+if (グーチョキパー == 1) {
+basic.showLeds(`
+ # # . # #
+ # # . # #
+ . # # # .
+ # . . . #
+ . # # # .
+ `)
+ } else {
+basic.showLeds(`
+ # . # . #
+ # # # # #
+ # . # . #
+ # . . . #
+ . # . # .
+ `)
+ }
+ }
+})
+input.onGesture(Gesture.TiltRight, () => {
+music.beginMelody(music.builtInMelody(Melodies.Funeral), MelodyOptions.Once)
+})
+input.onGesture(Gesture.TiltLeft, () => {
+music.beginMelody(music.builtInMelody(Melodies.PowerUp), MelodyOptions.Once)
+})
+basic.forever(() => {
+    
+})
